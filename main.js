@@ -168,7 +168,9 @@ async function getLyricsForCurrentTrack() {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    const lyrics = result.response.lyrics.lyrics.body.html; 
+    console.log(result); // Log the result to check the obtained data
+    
+    const lyrics = result.response.lyrics.body.html; 
     displayCurrentTrackLyrics(lyrics); 
     
   } catch (error) {
