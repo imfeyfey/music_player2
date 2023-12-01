@@ -143,21 +143,17 @@ function formatTime(time) {
   return minutes + ":" + seconds;
 }
 
-
-// Function to display lyrics for the currently playing track
-// Function to display lyrics for the currently playing track
 async function displayCurrentTrackLyrics(lyrics) {
   try {
-    // Display lyrics in the designated lyrics section
+    
     const lyricsDisplay = document.querySelector(".lyrics");
-    lyricsDisplay.textContent = lyrics; // Assuming lyrics is plain text
+    lyricsDisplay.textContent = lyrics;
     
   } catch (error) {
     console.error("Error fetching or displaying lyrics:", error);
   }
 }
 
-// Function to get lyrics for the current track (you can use an API here)
 async function getLyricsForCurrentTrack() {
   const lyricsID = track_list[track_index].lyricsID;
   const url = `https://genius-song-lyrics1.p.rapidapi.com/song/lyrics/?id=${lyricsID}`;
@@ -172,11 +168,11 @@ async function getLyricsForCurrentTrack() {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    const lyrics = result.response.lyrics.lyrics.body.html; // Extract lyrics from the result
-    displayCurrentTrackLyrics(lyrics); // Display the fetched lyrics
+    const lyrics = result.response.lyrics.lyrics.body.html; 
+    displayCurrentTrackLyrics(lyrics); 
     
   } catch (error) {
     console.error(error);
-    return "Lyrics not available"; // Return a message in case of error
+    return "Lyrics not available"; 
   }
 }
