@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" 
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    
+    <title>Music Player</title>
+</head>
+<body>
+  <div class="music_player">
+    <div class="player">
+      
+      <!--album -->
+      <div class="track_art">
+        <div class="album_art"></div>
+        <img class="vinyl" src="https://pngimg.com/d/vinyl_PNG18.png" alt="vinyl record">
+      </div>
+      
+      <!--title & artist -->
+      <div class="title_artist">
+        <div class="title">Title</div>
+        <div class="artist">Artist</div>
+      </div>
+      
+      <!--timer -->
+      <div class="seek_items">
+        <div class="timer">
+          <div class="current_time">00:00</div>
+          <div class="total_duration">00:00</div>
+        </div>
+        <div class="slider">
+          <input type="range" min="1" max="100"
+                  value="0" class="seek_slider" onchange="seekTo()"/>
+        </div>
+      </div>
+      
+       <!--buttons -->
+      <div class="buttons">
+         <div class="prev" onclick="prevTrack()"><i class="fa-solid fa-backward-step"></i></div>
+         <div class="playPause" onclick="playPauseTrack()"><i class="fa-solid fa-circle-play"></i></div>
+         <div class="next" onclick="nextTrack()"><i class="fa-solid fa-forward-step"></i></div>
+      </div>
+    </div>
+
+    <div class="explore">
+      <h2>Lyrics</h2>
+      <div class="lyrics"></div>
+    </div>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
